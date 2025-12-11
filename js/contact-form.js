@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitBtn.disabled = true;
 
-            // Collect form data
-            const formData = new FormData();
+            // Collect form data as URLSearchParams (better compatibility for Google Apps Script)
+            const formData = new URLSearchParams();
             formData.append('name', document.getElementById('name').value);
             formData.append('email', document.getElementById('email').value);
             formData.append('mobile', document.getElementById('mobile').value);
@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('message', document.getElementById('message').value);
 
             // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxxV_9TEhAiUprY9lACA9oFumt7mZluUdyqTlvQZjm1b-e-eLyBbukoURNXLq4MQQUR9w/exec';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxYuUca9904t2LiGy2gB3PIhBstv6CEguvifwsZYwser-HKyHVQEGqKDdJ1uqk3J-H6og/exec';
+
+            console.log('Sending data to:', scriptURL);
+            console.log('Data:', Object.fromEntries(formData));
 
             fetch(scriptURL, {
                 method: 'POST',
@@ -33,12 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
             })
                 .then(response => response.json())
                 .then(data => {
+                    console.log('Response:', data);
                     if (data.result === 'success') {
                         alert('Thank you! Your inquiry has been sent successfully.');
                         form.reset();
                     } else {
-                        alert('Oops! Something went wrong. Please try again.');
-                        console.error('Error:', data);
+                        alert('Oops! Something went wrong. Please try again. Error: ' + (data.error || 'Unknown error'));
+                        console.error('Script Error:', data);
                     }
                 })
                 .catch(error => {

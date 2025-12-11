@@ -2,28 +2,31 @@
  * Google Apps Script to handle Contact Form submissions
  * 
  * INSTRUCTIONS:
- * 1. Go to https://script.google.com/home
- * 2. Click "New Project"
- * 3. Paste this code into the editor (Code.gs)
- * 4. Save the project (e.g., "Fairdeal Contact Form")
- * 5. Run the 'setup' function once to create the sheet headers (optional, but recommended)
- *    - You might need to authorize the script.
- * 6. Click "Deploy" -> "New deployment"
- * 7. Select type: "Web app"
- * 8. Description: "Contact Form API"
- * 9. Execute as: "Me" (your email)
- * 10. Who has access: "Anyone" (IMPORTANT)
- * 11. Click "Deploy"
- * 12. Copy the "Web app URL"
- * 13. Paste the URL into d:\fairdeal\js\contact-form.js where indicated.
+ * 1. Open your Google Sheet where you want the data to go.
+ * 2. Look at the URL. It looks like: https://docs.google.com/spreadsheets/d/1aBcD...xyz/edit
+ * 3. Copy the long ID part between '/d/' and '/edit'. This is your SPREADSHEET_ID.
+ * 4. Paste that ID into the code below where it says 'PASTE_YOUR_SPREADSHEET_ID_HERE'.
+ * 5. Copy all this code and paste it into your Google Apps Script editor (Code.gs).
+ * 6. Save.
+ * 7. Click "Deploy" -> "Manage deployments".
+ * 8. Click the "Edit" (pencil) icon on your active deployment.
+ * 9. **CRITICAL**: In the "Version" dropdown, select "New version".
+ * 10. Click "Deploy".
  */
 
 function doPost(e) {
+    var lock = LockService.getScriptLock();
+    lock.tryLock(10000);
+
     try {
-        var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Form Responses');
+        // REPLACE THIS WITH YOUR ACTUAL SPREADSHEET ID
+        var spreadsheetId = 'PASTE_YOUR_SPREADSHEET_ID_HERE';
+
+        var doc = SpreadsheetApp.openById(spreadsheetId);
+        var sheet = doc.getSheetByName('Form Responses');
+
         if (!sheet) {
-            sheet = SpreadsheetApp.getActiveSpreadsheet().insertSheet('Form Responses');
-            // Add headers if new sheet
+            sheet = doc.insertSheet('Form Responses');
             sheet.appendRow(['Timestamp', 'Name', 'Email', 'Mobile', 'POL', 'POD', 'Cargo', 'Containers', 'Size', 'Weight', 'Message']);
         }
 
@@ -57,7 +60,6 @@ function doPost(e) {
             "Weight: " + params.weight + "\n" +
             "Message: " + params.message + "\n";
 
-        // Replace with your email address
         var recipient = "info@fairdealforwaders.com";
         var subject = "New Contact Form Inquiry - " + params.name;
 
@@ -69,13 +71,7 @@ function doPost(e) {
     } catch (error) {
         return ContentService.createTextOutput(JSON.stringify({ 'result': 'error', 'error': error.toString() }))
             .setMimeType(ContentService.MimeType.JSON);
-    }
-}
-
-function setup() {
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Form Responses');
-    if (!sheet) {
-        sheet = SpreadsheetApp.getActiveSpreadsheet().insertSheet('Form Responses');
-        sheet.appendRow(['Timestamp', 'Name', 'Email', 'Mobile', 'POL', 'POD', 'Cargo', 'Containers', 'Size', 'Weight', 'Message']);
+    } finally {
+        lock.releaseLock();
     }
 }
