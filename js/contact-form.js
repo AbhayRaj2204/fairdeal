@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('message', document.getElementById('message').value);
 
             // REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxYuUca9904t2LiGy2gB3PIhBstv6CEguvifwsZYwser-HKyHVQEGqKDdJ1uqk3J-H6og/exec';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwZl94O1VREAb6qTNBOwrZ1ZgZHysKmvHpLBSYOXsbqAKqO0hnwUBTlTCP_Wbvo94vshg/exec';
 
             console.log('Sending data to:', scriptURL);
             console.log('Data:', Object.fromEntries(formData));
