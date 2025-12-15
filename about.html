@@ -35,18 +35,26 @@
 <body>
     <!-- Spinner Start -->
     <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+        class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex flex-column align-items-center justify-content-center">
+        <div class="loader-3d">
+            <div class="loader-cube">
+                <div class="loader-face"><i class="fa fa-plane"></i></div>
+                <div class="loader-face"><i class="fa fa-ship"></i></div>
+                <div class="loader-face"><i class="fa fa-truck"></i></div>
+                <div class="loader-face"><i class="fa fa-box"></i></div>
+                <div class="loader-face"><i class="fa fa-globe"></i></div>
+                <div class="loader-face"><i class="fa fa-anchor"></i></div>
+            </div>
         </div>
+        <div class="loading-text">Loading Fairdeal...</div>
     </div>
     <!-- Spinner End -->
 
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
-        <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
-            <h2 class="mb-2 text-white">FAIRDEAL</h2>
+        <a href="index.html" class="navbar-brand bg-white d-flex align-items-center px-4 px-lg-5">
+            <img src="img/png.png" alt="FAIRDEAL Logo" class="img-fluid" style="max-height: 60px; width: auto;">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -98,7 +106,7 @@
             <div class="row g-5 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg"
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.png"
                             style="object-fit: cover;" alt="">
                     </div>
                 </div>
@@ -124,7 +132,7 @@
                                 with dedicated compliance team.</p>
                         </div>
                     </div>
-                    <a href="" class="btn btn-primary py-3 px-5">Explore More</a>
+                    <!-- <a href="" class="btn btn-primary py-3 px-5">Explore More</a> -->
                 </div>
             </div>
         </div>
@@ -319,9 +327,9 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9924237511</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@fairdealforwaders.com</p>
                     <div class="d-flex pt-2">
-                         
+
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                         
+
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -341,15 +349,12 @@
                     <!-- <a class="btn btn-link" href="">Terms & Condition</a> -->
                     <a class="btn btn-link" href="">Support</a>
                 </div>
-                <!-- <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                <div class="col-lg-3 col-md-6">
+                    <div class="bg-white p-3 rounded d-inline-block">
+                        <img src="img/png.png" alt="FAIRDEAL Logo" class="img-fluid"
+                            style="max-height: 120px; width: auto;">
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="container">

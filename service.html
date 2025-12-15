@@ -35,18 +35,26 @@
 <body>
     <!-- Spinner Start -->
     <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+        class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex flex-column align-items-center justify-content-center">
+        <div class="loader-3d">
+            <div class="loader-cube">
+                <div class="loader-face"><i class="fa fa-plane"></i></div>
+                <div class="loader-face"><i class="fa fa-ship"></i></div>
+                <div class="loader-face"><i class="fa fa-truck"></i></div>
+                <div class="loader-face"><i class="fa fa-box"></i></div>
+                <div class="loader-face"><i class="fa fa-globe"></i></div>
+                <div class="loader-face"><i class="fa fa-anchor"></i></div>
+            </div>
         </div>
+        <div class="loading-text">Loading Fairdeal...</div>
     </div>
     <!-- Spinner End -->
 
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
-        <a href="index.html" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
-            <h2 class="mb-2 text-white">FAIRDEAL</h2>
+        <a href="index.html" class="navbar-brand bg-white d-flex align-items-center px-4 px-lg-5">
+            <img src="img/png.png" alt="FAIRDEAL Logo" class="img-fluid" style="max-height: 60px; width: auto;">
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -103,67 +111,73 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="">
+                            <img class="img-fluid" src="img/service-1.png" alt="">
                         </div>
                         <h4 class="mb-3">Air Freight</h4>
                         <p>We provide fast and hassle-free air cargo solutions for your urgent shipments and
                             time-sensitive cargo requirements.</p>
-                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="#" data-service="air-freight"><i
+                                class="fa fa-arrow-right"></i><span>Read More</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/service-2.jpg" alt="">
+                            <img class="img-fluid" src="img/service-2.png" alt="">
                         </div>
                         <h4 class="mb-3">Ocean Freight</h4>
                         <p>We provide complete logistics and compliance solutions for smooth international ocean freight
                             services.</p>
-                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="#" data-service="ocean-freight"><i
+                                class="fa fa-arrow-right"></i><span>Read More</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/service-3.jpg" alt="">
+                            <img class="img-fluid" src="img/service-3.png" alt="">
                         </div>
                         <h4 class="mb-3">Customs Clearance</h4>
                         <p>We provide complete logistics and compliance solutions for smooth international and domestic
                             trade customs clearance.</p>
-                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="#" data-service="customs-clearance"><i
+                                class="fa fa-arrow-right"></i><span>Read More</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/service-4.jpg" alt="">
+                            <img class="img-fluid" src="img/service-4.png" alt="">
                         </div>
                         <h4 class="mb-3">Project Cargo</h4>
                         <p>Brokerage solutions and effective freight forwarding solutions for all your import and export
                             needs.</p>
-                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="#" data-service="project-cargo"><i
+                                class="fa fa-arrow-right"></i><span>Read More</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/LCL.jpg" alt="">
+                            <img class="img-fluid" src="img/service-5.png" alt="">
                         </div>
                         <h4 class="mb-3">LCL Cargo - Air & Sea</h4>
                         <p>We provide complete logistics and compliance solutions for Less Than Container Load shipments
                             internationally.</p>
-                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="#" data-service="lcl-cargo"><i
+                                class="fa fa-arrow-right"></i><span>Read More</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/service-6.jpg" alt="">
+                            <img class="img-fluid" src="img/service-6.png" alt="">
                         </div>
                         <h4 class="mb-3">Custom Registeration/Permission</h4>
                         <p>Our team coordinates with customs authorities to enable on-time registration and hassle-free
                             factory stuffing under supervision.</p>
-                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="#" data-service="custom-registration"><i
+                                class="fa fa-arrow-right"></i><span>Read More</span></a>
                     </div>
                 </div>
             </div>
@@ -310,9 +324,9 @@
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9924237511</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@fairdealforwaders.com</p>
                     <div class="d-flex pt-2">
-                         
+
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                         
+
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -332,15 +346,12 @@
                     <!-- <a class="btn btn-link" href="">Terms & Condition</a> -->
                     <a class="btn btn-link" href="">Support</a>
                 </div>
-                <!-- <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                <div class="col-lg-3 col-md-6">
+                    <div class="bg-white p-3 rounded d-inline-block">
+                        <img src="img/png.png" alt="FAIRDEAL Logo" class="img-fluid"
+                            style="max-height: 120px; width: auto;">
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="container">
@@ -362,6 +373,71 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+
+    <!-- Service Modal -->
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content service-modal-content">
+                <div class="modal-header service-modal-header">
+                    <h5 class="modal-title service-modal-title" id="serviceModalLabel">Service Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body service-modal-body">
+                    <p id="serviceModalBody">Content goes here...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const serviceDetails = {
+                'air-freight': {
+                    title: 'Air Freight Services',
+                    content: 'Experience the speed and reliability of our premium Air Freight services. We specialize in time-critical shipments, offering door-to-door delivery, charter services, and express handling. Our global network ensures your cargo reaches its destination safely and on schedule, whether it\'s perishable goods, hazardous materials, or oversized equipment.'
+                },
+                'ocean-freight': {
+                    title: 'Ocean Freight Services',
+                    content: 'Navigate global trade with confidence using our comprehensive Ocean Freight solutions. We offer FCL (Full Container Load) and LCL (Less than Container Load) services, breakbulk, and RORO options. Our partnerships with major shipping lines guarantee competitive rates and flexible sailing schedules to ports worldwide.'
+                },
+                'customs-clearance': {
+                    title: 'Customs Clearance',
+                    content: 'Streamline your supply chain with our expert Customs Clearance services. Our licensed brokers handle complex regulations, documentation, and tariff classifications to prevent delays and penalties. We ensure full compliance with local and international trade laws, facilitating smooth import and export processes.'
+                },
+                'project-cargo': {
+                    title: 'Project Cargo',
+                    content: 'Handle complex and oversized shipments with our specialized Project Cargo services. From heavy machinery to industrial plant relocations, our team plans every detail, including route surveys, heavy lift engineering, and multi-modal transport coordination, ensuring your critical assets arrive safely.'
+                },
+                'lcl-cargo': {
+                    title: 'LCL Cargo - Air & Sea',
+                    content: 'Optimize your shipping costs with our efficient LCL (Less than Container Load) consolidation services. Perfect for smaller shipments, we consolidate cargo from multiple shippers into a single container, offering frequent departures and reliable transit times without the cost of a full container.'
+                },
+                'custom-registration': {
+                    title: 'Custom Registration & Permission',
+                    content: 'Ensure seamless business operations with our Custom Registration and Permission services. We assist with IEC (Import Export Code) registration, AD code registration, and obtaining necessary government permissions and licenses, handling the bureaucratic burden so you can focus on your business.'
+                }
+            };
+
+            const serviceModal = new bootstrap.Modal(document.getElementById('serviceModal'));
+            const modalTitle = document.getElementById('serviceModalLabel');
+            const modalBody = document.getElementById('serviceModalBody');
+
+            document.querySelectorAll('.btn-slide[data-service]').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const serviceKey = this.getAttribute('data-service');
+                    const details = serviceDetails[serviceKey];
+
+                    if (details) {
+                        modalTitle.textContent = details.title;
+                        modalBody.textContent = details.content;
+                        serviceModal.show();
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
