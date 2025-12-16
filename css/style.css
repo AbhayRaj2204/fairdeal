@@ -613,3 +613,116 @@
 .btn-close-white {
     filter: brightness(0) invert(1);
 }
+
+/* WhatsApp floating button (circular) and rotating message bubble */
+.whatsapp-float {
+    position: fixed;
+    left: 20px;
+    bottom: 50px;
+    z-index: 9999;
+    background: #25D366;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.whatsapp-float .whatsapp-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* message bubble that appears next to the button and cycles messages */
+.whatsapp-bubble {
+    position: absolute;
+    left: 72px;
+    bottom: 8px;
+    transform: translateY(6px);
+    background: #ffffff;
+    color: #060315;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease;
+    white-space: nowrap;
+}
+.whatsapp-bubble.show {
+    opacity: 1;
+    transform: translateY(-6px);
+}
+
+/* small tail pointing to the button so it's visually attached */
+.whatsapp-bubble::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 8px solid #ffffff;
+    filter: drop-shadow(-1px 1px 0 rgba(0,0,0,0.06));
+}
+
+/* Small screens: bubble appears to the right of button */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        left: 12px;
+        bottom: 80px;
+        width: 52px;
+        height: 52px;
+    }
+    .whatsapp-bubble {
+        left: auto;
+        right: -155px;
+        bottom: 12px;
+        transform: translateY(0);
+        max-width: 250px;
+        white-space: normal;
+        word-break: break-word;
+        z-index: 10001;
+    }
+    .whatsapp-bubble.show {
+        transform: translateY(0);
+    }
+    .whatsapp-bubble::before {
+        display: none;
+    }
+}
+
+/* active state on the button while the bubble is visible: subtle pulse ring */
+.whatsapp-float.active {
+    z-index: 10000;
+}
+.whatsapp-float.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.16);
+    animation: whatsappPulse 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes whatsappPulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.9; }
+    60% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.45; }
+    100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+}

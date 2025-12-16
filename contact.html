@@ -792,7 +792,7 @@
         <div class="col-md-6 pe-lg-0 wow fadeInRight" data-wow-delay="0.1s">
           <div class="position-relative h-100">
             <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3717.9548256667!2d70.77155131111111!3d22.257432099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cb4dcb8e8c05%3A0xf17f2f4b80e5fa67!2sGiriraj%203%20Apartment!5e0!3m2!1sen!2sin!4v1234567890123"
               frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
@@ -815,9 +815,9 @@
           <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@fairdealservices.com</p>
           <div class="d-flex pt-2">
 
-            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-
-            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61584365057753" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/fair_deal_services" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/fairdeal-services18" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -856,7 +856,11 @@
   </div>
   <!-- Footer End -->
 
-
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919924237511?text=Hello%20Fairdeal%20Services" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+        <span id="whatsappBubble" class="whatsapp-bubble" aria-hidden="true">WhatsApp us</span>
+    </a>
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -873,6 +877,38 @@
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
   <script src="js/contact-form.js"></script>
+  <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const messages = [
+                'Doubt? Message us',
+                'Contact us',
+                'Need help? Chat now',
+                'Get a free quote'
+            ];
+            const bubble = document.getElementById('whatsappBubble');
+            if (!bubble) return;
+            let idx = 0;
+            let hideTimeout = null;
+
+                function showMessage() {
+                    bubble.textContent = messages[idx];
+                    const parent = bubble.parentElement;
+                    bubble.classList.add('show');
+                    if (parent) parent.classList.add('active');
+                    if (hideTimeout) clearTimeout(hideTimeout);
+                    hideTimeout = setTimeout(() => {
+                        bubble.classList.remove('show');
+                        if (parent) parent.classList.remove('active');
+                    }, 3500);
+                    idx = (idx + 1) % messages.length;
+                }
+
+            // initial show after a short delay
+            setTimeout(showMessage, 1200);
+            // repeat periodically
+            setInterval(showMessage, 4500);
+        });
+    </script>
 </body>
 
 </html>

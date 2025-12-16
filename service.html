@@ -325,9 +325,9 @@
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@fairdealforwaders.com</p>
                     <div class="d-flex pt-2">
 
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61584365057753" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/fair_deal_services" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/fairdeal-services18" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -369,7 +369,11 @@
     </div>
     <!-- Footer End -->
 
-
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919924237511?text=Hello%20Fairdeal%20Services" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
+        <span id="whatsappBubble" class="whatsapp-bubble" aria-hidden="true">WhatsApp us</span>
+    </a>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -450,6 +454,38 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const messages = [
+                'Doubt? Message us',
+                'Contact us',
+                'Need help? Chat now',
+                'Get a free quote'
+            ];
+            const bubble = document.getElementById('whatsappBubble');
+            if (!bubble) return;
+            let idx = 0;
+            let hideTimeout = null;
+
+                function showMessage() {
+                    bubble.textContent = messages[idx];
+                    const parent = bubble.parentElement;
+                    bubble.classList.add('show');
+                    if (parent) parent.classList.add('active');
+                    if (hideTimeout) clearTimeout(hideTimeout);
+                    hideTimeout = setTimeout(() => {
+                        bubble.classList.remove('show');
+                        if (parent) parent.classList.remove('active');
+                    }, 3500);
+                    idx = (idx + 1) % messages.length;
+                }
+
+            // initial show after a short delay
+            setTimeout(showMessage, 1200);
+            // repeat periodically
+            setInterval(showMessage, 4500);
+        });
+    </script>
 </body>
 
 </html>
