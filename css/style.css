@@ -44,6 +44,7 @@
     height: 100px;
     transform-style: preserve-3d;
     animation: cube-spin 3s infinite linear;
+    will-change: transform;
 }
 
 .loader-face {
@@ -634,6 +635,7 @@
     text-decoration: none;
     transition: transform .15s ease, box-shadow .15s ease;
 }
+
 .whatsapp-float .whatsapp-icon {
     font-size: 22px;
     line-height: 1;
@@ -649,7 +651,7 @@
     color: #060315;
     padding: 8px 12px;
     border-radius: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     font-weight: 600;
     font-size: 14px;
     opacity: 0;
@@ -657,6 +659,7 @@
     transition: opacity .25s ease, transform .25s ease;
     white-space: nowrap;
 }
+
 .whatsapp-bubble.show {
     opacity: 1;
     transform: translateY(-6px);
@@ -674,7 +677,7 @@
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
     border-right: 8px solid #ffffff;
-    filter: drop-shadow(-1px 1px 0 rgba(0,0,0,0.06));
+    filter: drop-shadow(-1px 1px 0 rgba(0, 0, 0, 0.06));
 }
 
 /* Small screens: bubble appears to the right of button */
@@ -685,6 +688,7 @@
         width: 52px;
         height: 52px;
     }
+
     .whatsapp-bubble {
         left: auto;
         right: -155px;
@@ -695,9 +699,11 @@
         word-break: break-word;
         z-index: 10001;
     }
+
     .whatsapp-bubble.show {
         transform: translateY(0);
     }
+
     .whatsapp-bubble::before {
         display: none;
     }
@@ -707,6 +713,7 @@
 .whatsapp-float.active {
     z-index: 10000;
 }
+
 .whatsapp-float.active::after {
     content: "";
     position: absolute;
@@ -722,7 +729,18 @@
 }
 
 @keyframes whatsappPulse {
-    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.9; }
-    60% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.45; }
-    100% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+    0% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.9;
+    }
+
+    60% {
+        transform: translate(-50%, -50%) scale(1.25);
+        opacity: 0.45;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.6);
+        opacity: 0;
+    }
 }

@@ -6,6 +6,9 @@
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
+                setTimeout(function () {
+                    $('#spinner').css('display', 'none');
+                }, 800); // Match the CSS transition duration
             }
         }, 1000); // Allow some minimum time for the animation to be seen
     };
