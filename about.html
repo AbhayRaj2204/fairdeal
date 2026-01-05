@@ -122,7 +122,8 @@
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                             <i class="fa fa-globe fa-3x text-primary mb-3"></i>
                             <h5>Multi-Port Coverage</h5>
-                            <p class="m-0">We serve multiple international ports ensuring comprehensive coverage for all your logistics needs.</p>
+                            <p class="m-0">We serve multiple international ports ensuring comprehensive coverage for all
+                                your logistics needs.</p>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
                             <i class="fa fa-shipping-fast fa-3x text-primary mb-3"></i>
@@ -322,14 +323,20 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>401-407 Prod Court, Town Hall Road, Jamnagar, 361010</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>401-407 Prod Court, Town Hall Road,
+                        Jamnagar, 361010</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9924237511</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@fairdealforwaders.com</p>
                     <div class="d-flex pt-2">
 
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61584365057753" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/fair_deal_services" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/fairdeal-services18" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.facebook.com/profile.php?id=61584365057753" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/fair_deal_services"
+                            target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.linkedin.com/company/fairdeal-services18" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -343,11 +350,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="service.html">Our Services</a>
                     <!-- <a class="btn btn-link" href="">Terms & Condition</a> -->
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="contact.html">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="bg-white p-3 rounded d-inline-block">
@@ -373,7 +380,8 @@
     <!-- Footer End -->
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919924237511?text=Hello%20Fairdeal%20Services" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919924237511?text=Hello%20Fairdeal%20Services" class="whatsapp-float" target="_blank"
+        rel="noopener" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
         <span id="whatsappBubble" class="whatsapp-bubble" aria-hidden="true">WhatsApp us</span>
     </a>
@@ -405,18 +413,18 @@
             let idx = 0;
             let hideTimeout = null;
 
-                function showMessage() {
-                    bubble.textContent = messages[idx];
-                    const parent = bubble.parentElement;
-                    bubble.classList.add('show');
-                    if (parent) parent.classList.add('active');
-                    if (hideTimeout) clearTimeout(hideTimeout);
-                    hideTimeout = setTimeout(() => {
-                        bubble.classList.remove('show');
-                        if (parent) parent.classList.remove('active');
-                    }, 3500);
-                    idx = (idx + 1) % messages.length;
-                }
+            function showMessage() {
+                bubble.textContent = messages[idx];
+                const parent = bubble.parentElement;
+                bubble.classList.add('show');
+                if (parent) parent.classList.add('active');
+                if (hideTimeout) clearTimeout(hideTimeout);
+                hideTimeout = setTimeout(() => {
+                    bubble.classList.remove('show');
+                    if (parent) parent.classList.remove('active');
+                }, 3500);
+                idx = (idx + 1) % messages.length;
+            }
 
             // initial show after a short delay
             setTimeout(showMessage, 1200);

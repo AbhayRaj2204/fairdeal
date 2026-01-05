@@ -1,4 +1,9 @@
 /********** Template CSS **********/
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
 :root {
     --primary: #FF3E41;
     --secondary: #51CFED;
